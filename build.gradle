@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'signing'
+    id 'ninja.miserable.blossom' version '1.0.1'
+    id 'org.spongepowered.plugin' version '0.8.1'
+}
+
+group = 'org.stonebound'
+version = '1.0.0'
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+dependencies {
+    compile 'org.spongepowered:spongeapi:6.0.0'
+}
+
+sponge.plugin.id = 'nochat'
+
+blossom {
+    def location = 'src/main/java/org/stonebound/nochat/NoChat.java'
+    replaceToken '@version@', version, location
+}
+
+signing {
+    if (project.hasProperty('signing.keyId') && project.hasProperty('signing.password') && project.hasProperty('signing.secretKeyRingFile')) {
+        sign configurations.archives
+    }
+}
