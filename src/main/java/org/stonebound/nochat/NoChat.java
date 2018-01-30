@@ -23,5 +23,4 @@ public class NoChat {
             event.setCancelled(true);
         }
     }
-
 }

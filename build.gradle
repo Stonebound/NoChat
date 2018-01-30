@@ -7,7 +7,8 @@ plugins {
 }
 
 group = 'org.stonebound'
-version = '1.0.0'
+sponge.plugin.id = 'nochat'
+version = '1.0.1'
 
 compileJava {
     sourceCompatibility = '1.8'
@@ -18,7 +19,12 @@ dependencies {
     compile 'org.spongepowered:spongeapi:6.0.0'
 }
 
-sponge.plugin.id = 'nochat'
+processResources {
+    from('src/main/resources') {
+        include 'mcmod.info'
+        expand(version: project.version, apiVersionRange: '[5.0.0,6.0.0,7.0.0]')
+    }
+}
 
 blossom {
     def location = 'src/main/java/org/stonebound/nochat/NoChat.java'

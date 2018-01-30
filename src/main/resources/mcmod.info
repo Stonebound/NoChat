@@ -1,0 +1,14 @@
+[{
+    "modid": "nochat",
+    "name": "NoChat",
+    "description": "Cancels all player chat",
+    "version": "$version",
+    "url": "https://ore.spongepowered.org/phit/NoChat",
+    "authors": ["phit"],
+    "requiredMods": [
+        "spongeapi@$apiVersionRange"
+    ],
+    "dependencies": [
+        "spongeapi@$apiVersionRange"
+    ]
+}]
