@@ -18,8 +18,7 @@ import org.spongepowered.api.plugin.Plugin;
 public class NoChat {
     @Listener(order = Order.LAST)
     public void onChat(MessageChannelEvent.Chat event) {
-        Object root = event.getCause().root();
-        if (root instanceof Player) {
+        if (event.getCause().root() instanceof Player) {
             event.setCancelled(true);
         }
     }
